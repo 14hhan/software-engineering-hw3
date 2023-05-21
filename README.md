@@ -1,5 +1,8 @@
 # C++ 자동 formatting 설정법(Visual Studio 사용시)
 
+참고: [윈도우 visual studio 초기 설정법](https://webnautes.tistory.com/1158)
+
+## 자동 포멧팅 설정
 ### 1.Visual Studio 좌측의 Extensions에서 C/C++을 검색해 설치합니다
 ![1](https://github.com/14hhan/software-engineering-hw3/assets/53640976/3186904e-0e64-4030-a514-277216c3df3b)
 
