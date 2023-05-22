@@ -34,13 +34,6 @@ class CompanyUser : public User {
               int companyNumber);
 };
 
-struct HireSummary {
-  std::string companyName;
-  std::string workType;
-  int applicantNum;
-  int dueDate;
-};
-
 class HireInfo {
  private:
   std::string companyName;
@@ -50,7 +43,7 @@ class HireInfo {
 
  public:
   HireInfo(std::string companyName, std::string workType, int dueDate);
-  HireSummary getHireInfo();
+  std::string getHireInfo();
   void increaseApplicantNum();
 };
 
