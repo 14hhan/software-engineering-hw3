@@ -7,6 +7,7 @@ HireInfo::HireInfo(string companyName, string workType, int dueDate) {
   this->workType = workType;
   this->dueDate = dueDate;
   this->applicantNum = 0;
+  allHireInfo.push_back(this);
 }
 
 string HireInfo::getHireInfo() {

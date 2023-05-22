@@ -2,6 +2,7 @@
 #define Entity_h
 
 #include <string>
+#include <vector>
 
 class User {
  private:
@@ -40,6 +41,7 @@ class HireInfo {
   std::string workType;
   int applicantNum;
   int dueDate;
+  static vector<HireInfo*> allHireInfo;
 
  public:
   HireInfo(std::string companyName, std::string workType, int dueDate);
