@@ -53,9 +53,11 @@ class HireInfo {
 }
 
 class Application {
-  // NEEDED: 연결된 HireInfo 지정 변수 만들기
+ private:
+  HireInfo* appliedHireInfo;
+
  public:
-  Application();
+  Application(HireInfo* hireInfo);
 }
 
 #endif
