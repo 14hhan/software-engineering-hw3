@@ -1,9 +1,10 @@
 
 #include <string>
+using namespace std;
 
 #include "Entity.h"
 
-HireInfo::HireInfo(std::string companyName, std::string workType, int dueDate) {
+HireInfo::HireInfo(string companyName, string workType, int dueDate) {
   this->companyName = companyName;
   this->workType = workType;
   this->dueDate = dueDate;
