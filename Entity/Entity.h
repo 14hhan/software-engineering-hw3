@@ -10,8 +10,7 @@ class User {
 
  public:
   User(std::string id, int password);
-  void getUserInfo();     // NEEDED: 반환형 지정 필요
-  void getUserDetails();  // NEEDED: 반환형 지정 필요
+  virtual std::string getUserInfo();
 };
 
 class NormalUser : public User {
@@ -22,6 +21,7 @@ class NormalUser : public User {
  public:
   NormalUser(std::string id, int password, std::string userName,
              int registrationNumber);
+  virtual std::string getUserInfo();
 };
 
 class CompanyUser : public User {
@@ -32,6 +32,7 @@ class CompanyUser : public User {
  public:
   CompanyUser(std::string id, int password, std::string companyName,
               int companyNumber);
+  virtual std::string getUserInfo();
 };
 
 class HireInfo {
