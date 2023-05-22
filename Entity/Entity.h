@@ -8,8 +8,8 @@ class User {
 
  public:
   User(std::string id, int password);
-  void GetUserInfo();     // NEEDED: 반환형 지정 필요
-  void GetUserDetails();  // NEEDED: 반환형 지정 필요
+  void getUserInfo();     // NEEDED: 반환형 지정 필요
+  void getUserDetails();  // NEEDED: 반환형 지정 필요
 }
 
 class NormalUser : public User {
