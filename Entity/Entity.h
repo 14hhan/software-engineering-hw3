@@ -1,6 +1,8 @@
 #ifndef Entity_h
 #define Entity_h
 
+#include <string>
+
 class User {
  private:
   std::string id;
