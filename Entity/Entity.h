@@ -10,7 +10,7 @@ class User {
   User(std::string id, int password);
   void getUserInfo();     // NEEDED: 반환형 지정 필요
   void getUserDetails();  // NEEDED: 반환형 지정 필요
-}
+};
 
 class NormalUser : public User {
  private:
@@ -20,7 +20,7 @@ class NormalUser : public User {
  public:
   NormalUser(std::string id, int password, std::string userName,
              int registrationNumber);
-}
+};
 
 class CompanyUser : public User {
  private:
@@ -30,14 +30,14 @@ class CompanyUser : public User {
  public:
   CompanyUser(std::string id, int password, std::string companyName,
               int companyNumber);
-}
+};
 
 struct HireSummary {
   std::string companyName;
   std::string workType;
   int applicantNum;
   int dueDate;
-}
+};
 
 class HireInfo {
  private:
@@ -50,7 +50,7 @@ class HireInfo {
   HireInfo(std::string companyName, std::string workType, int dueDate);
   HireSummary getHireInfo();
   void increaseApplicantNum();
-}
+};
 
 class Application {
  private:
@@ -58,6 +58,6 @@ class Application {
 
  public:
   Application(HireInfo* hireInfo);
-}
+};
 
 #endif
