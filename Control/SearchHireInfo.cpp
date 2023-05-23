@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#include "Control.h"
+#include "./Control.h"
 
 SearchHireInfo::SearchHireInfo() {}
 

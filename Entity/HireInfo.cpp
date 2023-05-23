@@ -1,6 +1,6 @@
 using namespace std;
 
-#include "Entity.h"
+#include "./Entity.h"
 
 HireInfo::HireInfo(string companyName, string workType, int dueDate) {
   this->companyName = companyName;

@@ -4,11 +4,11 @@
 #include <string>
 #include <vector>
 
-#include "Entity.h"
+#include "../Entity/Entity.h"
 
 class SearchHireInfo {
  public:
-  SearchHireInfo(){HireInfo.};
+  SearchHireInfo();
   std::vector<std::string> sendSearchHireInfo();
 
  private:
