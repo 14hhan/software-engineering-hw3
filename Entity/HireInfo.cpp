@@ -10,12 +10,12 @@ HireInfo::HireInfo(string companyName, string workType, int dueDate) {
   allHireInfo.push_back(this);
 };
 
-string HireInfo::getHireInfo() {
-  string summary = "";
-  summary.append("Company:").append(companyName).append("\n");
-  summary.append("Work Type:").append(workType).append("\n");
-  summary.append("Due Date:").append(to_string(dueDate)).append("\n");
-  summary.append("Applicant Num:").append(to_string(applicantNum)).append("\n");
+HireInfoSummary HireInfo::getHireInfo() {
+  HireInfoSummary summary;
+  summary.companyName = companyName;
+  summary.workType = workType;
+  summary.applicantNum = to_string(applicantNum);
+  summary.dueDate = to_string(dueDate);
   return summary;
 };
 
