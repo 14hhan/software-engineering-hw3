@@ -14,4 +14,10 @@ class ApplyHireInfo {
   bool sendCreateNewApplication();
 };
 
+
+class ShowHireInfo {
+  public: 
+    std::string* sendHireInfoData();
+};
+
 #endif
