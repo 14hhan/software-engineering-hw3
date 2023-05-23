@@ -2,15 +2,22 @@
 #define Control_h
 
 #include <string>
+#include <vector>
+
+#include "Entity.h"
 
 class SearchHireInfo {
  public:
-  std::string* sendSearchHireInfos();
+  SearchHireInfo(){HireInfo.};
+  std::vector<std::string> sendSearchHireInfo();
+
+ private:
+  HireInfo* hireInfoGroup;
 };
 
 class ApplyHireInfo {
  public:
-  std::string* sendSearchHireInfos();
+  std::vector<std::string> sendSearchHireInfo();
   bool sendCreateNewApplication();
 };
 
