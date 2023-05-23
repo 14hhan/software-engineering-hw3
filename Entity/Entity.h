@@ -47,13 +47,13 @@ class HireInfo {
   std::string workType;
   int applicantNum;
   int dueDate;
-  static vector<HireInfo*> allHireInfo;
+  static std::vector<HireInfo*> allHireInfo;
 
  public:
   HireInfo(std::string companyName, std::string workType, int dueDate);
   HireInfoSummary getHireInfo();
   void increaseApplicantNum();
-  static vector<HireInfo*> getAllHireInfo();
+  static std::vector<HireInfo*> getAllHireInfo();
 };
 
 class Application {
