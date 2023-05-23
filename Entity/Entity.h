@@ -47,6 +47,7 @@ class HireInfo {
   HireInfo(std::string companyName, std::string workType, int dueDate);
   std::string getHireInfo();
   void increaseApplicantNum();
+  static vector<HireInfo*> getAllHireInfo();
 };
 
 class Application {

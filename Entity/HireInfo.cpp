@@ -8,7 +8,7 @@ HireInfo::HireInfo(string companyName, string workType, int dueDate) {
   this->dueDate = dueDate;
   this->applicantNum = 0;
   allHireInfo.push_back(this);
-}
+};
 
 string HireInfo::getHireInfo() {
   string summary = "";
@@ -17,6 +17,8 @@ string HireInfo::getHireInfo() {
   summary.append("Due Date:").append(to_string(dueDate)).append("\n");
   summary.append("Applicant Num:").append(to_string(applicantNum)).append("\n");
   return summary;
-}
+};
 
-void HireInfo::increaseApplicantNum() { applicantNum++; }
+void HireInfo::increaseApplicantNum() { applicantNum++; };
+
+vector<HireInfo*> HireInfo::getAllHireInfo() { return allHireInfo; };
