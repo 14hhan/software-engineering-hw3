@@ -59,9 +59,11 @@ class HireInfo {
 class Application {
  private:
   HireInfo* appliedHireInfo;
+  static std::vector<Application*> allApplication;
 
  public:
   Application(HireInfo* hireInfo);
+  static std::vector<Application*> getAllApplication();
 };
 
 #endif

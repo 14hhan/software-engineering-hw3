@@ -1,7 +1,8 @@
 class ShowApplianceInfoUI
 {
 public:
-	void startInterface(void) const;
+    // 인자 필요
+	void static startInterface(void);
 };
 
 class CancelApplianceInfoUI

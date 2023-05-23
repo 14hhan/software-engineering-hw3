@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "../Entity/Entity.h"
+#include "../Boundary/Boundary.h"
 
 class SearchHireInfo {
  public:
@@ -29,6 +30,7 @@ class ShowApplianceInfo
 {
 public:
 	void sortByCompanyName() const;
+  void showApplianceInfo() const;
 };
 
 class CancelApplianceInfo
