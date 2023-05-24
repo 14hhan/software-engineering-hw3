@@ -45,7 +45,7 @@ public:
 class CancelApplianceInfo
 {
 public:
-	void deleteApplicationInfo() const;
+	std::string deleteApplicationInfo(int) const;
 	void sortByCompanyName() const;
 };
 

@@ -8,7 +8,7 @@ public:
 class CancelApplianceInfoUI
 {
 public:
-	void startInterface(void) const;
+	void startInterface(int) const;
 };
 
 class ShowApplicationStatInfoUI
