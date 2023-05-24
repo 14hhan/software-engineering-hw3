@@ -18,7 +18,7 @@ FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
 // RegisterHireInfo 객체를 생성하는 생성자 함수
 RegisterHireInfo::RegisterHireInfo() {
-  // 로그인 중, 회사 회원 상태 일 때만 판매 의류를 등록 할 수 있음
+  // 로그인 중, 회사 회원 상태 일 때만 채용 정보를 등록 할 수 있음
   if (loginState) {
     RegisterHireInfoUI* registerHireInfoUI = new RegisterHireInfoUI;
     registerHireInfoUI->InputHireInfotData(this);
