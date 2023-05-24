@@ -43,7 +43,11 @@ class HireInfo {
   int dueDate;
 
  public:
-  HireInfo(std::string companyName, std::string workType, int dueDate);
+  HireInfo(std::string companyName, std::string workType, int dueDate,
+           int quota);                       // 생성자
+  string GetWorkType() { return workType; }  // 업무 반환
+  int GetQuota() { return quota; }           // 인원수 반환
+  string GetdueDate() { return dueDate; }    // 신청 마감일 반환
   std::string getHireInfo();
   void increaseApplicantNum();
 };
