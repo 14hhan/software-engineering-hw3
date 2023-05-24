@@ -60,10 +60,11 @@ class Application {
  private:
   HireInfo* appliedHireInfo;
   static std::vector<Application*> allApplication;
+  static std::vector<Application*> getAllApplication();
+  int applicantNumber;
 
  public:
-  Application(HireInfo* hireInfo);
-  static std::vector<Application*> getAllApplication();
+  Application(HireInfo* hireInfo, int registrationNumber);
 };
 
 #endif
