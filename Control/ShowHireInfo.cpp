@@ -25,6 +25,9 @@ void ShowHireInfo::startInterface() {
   for (int i = 0; i < size; i++) {
     // 각 채용정보 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보 출력
     ShowHireInfoUI* ShowHireInfoUI = new ShowHireInfoUI;
+
+    // 출력 형식
+    fprintf(out_fp, "3.2. 등록된 채용 정보 조회 \n");
     fprintf(out_fp, "%s %s %u\n", workType, dueDate, quota);
   }
 }

@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "Boundary.h"
+
 // 상수 선언
 #define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"
@@ -39,13 +41,4 @@ void RegisterHireInfoUI::InputHireInfoData(RegisterHireInfo* registerHireInfo) {
 
   // 입력받은 정보를 컨트롤 클래스로 전달
   registerHireInfo->sendHireInfoData(workType, dueDate, quota);
-};
-
-// 입력받은 채용 정보들을 멤버 클래스에게 전달하는 함수
-void RegisterHireInfo::sendHireInfoData(string workType, string dueDate,
-                                        int quota) {
-  // 현재 로그인 한 회사 회원이 새 채용 정보를 등록하는 함수 호출
-  companyUser->HireInfo(workType, dueDate, quota);
-
-  RegisterHireInfoUI* registerHireInfoUI = new RegisterHireInfoUI;
 };
