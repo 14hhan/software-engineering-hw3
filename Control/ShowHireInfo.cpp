@@ -16,21 +16,8 @@ FILE *in_fp, *out_fp;
 FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
 FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
-// showHireInfo 컨트롤 클래스의 생성자 함수
-showHireInfo::showHireInfo() {
-  // 로그인 상태에서 회사 회원 자신이 등록한 채용 정보 조회 가능
-  if (loginState) {
-    // 클래스를 생성
-    ShowHireInfoUI* ShowHireInfoUI = new ShowHireInfoUI;
-  }
-};
-
-// 회사회원이 등록한 채용정보 조회하려함을 컨트롤 클래스에게 알려주는 함수
-void ShowHireInfoUI::
-
-    // 등록한 채용정보 리스트를 보여주는 함수
-    void
-    ShowHireInfo::startInterface() {
+// 등록한 채용정보 리스트를 보여주는 함수
+void ShowHireInfo::startInterface() {
   this->hireInfoGroup = HireInfo::getAllHireInfo();
   int size = hireInfoGroup.size();
 
