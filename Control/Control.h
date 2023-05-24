@@ -24,10 +24,9 @@ class SearchHireInfo {
   void sortByCompanyName();
 };
 
-class ApplyHireInfo {
+class ApplyHireInfo : public SearchHireInfo {
  public:
-  std::vector<std::string> sendSearchHireInfo();
-  bool sendCreateNewApplication();
+  bool sendCreateNewApplication(int chosenIndex);
 };
 
 #endif
