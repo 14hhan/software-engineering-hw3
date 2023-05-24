@@ -59,9 +59,10 @@ class HireInfo {
 class Application {
  private:
   HireInfo* appliedHireInfo;
+  int applicantNumber;
 
  public:
-  Application(HireInfo* hireInfo);
+  Application(HireInfo* hireInfo, int registrationNumber);
 };
 
 #endif

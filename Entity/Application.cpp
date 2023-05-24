@@ -1,5 +1,7 @@
 #include "./Entity.h"
 
-Application::Application(HireInfo* hireInfo) : appliedHireInfo(hireInfo) {
+Application::Application(HireInfo* hireInfo, int registrationNumber) {
   hireInfo->increaseApplicantNum();
+  this->appliedHireInfo = hireInfo;
+  this->applicantNumber = registrationNumber;
 }
