@@ -18,7 +18,7 @@ class SearchHireInfo {
   std::vector<std::string>
   sendSearchHireInfo();  // TODO: UI에 대한 반환형 논의 필요
 
- private:
+ protected:
   std::vector<HireInfo*> hireInfoGroup;
   vector<HireListItem> hireList;
   void sortByCompanyName();
