@@ -19,16 +19,21 @@ class NormalUser : public User {
  private:
   std::string userName;
   int registrationNumber;
+  string id;
+  int password;
 
  public:
   NormalUser(std::string id, int password, std::string userName,
              int registrationNumber);
+  string getId();
 };
 
 class CompanyUser : public User {
  private:
   std::string companyName;
   int companyNumber;
+  string id;
+  int password;
 
  public:
   CompanyUser(std::string id, int password, std::string companyName,
@@ -59,20 +64,22 @@ class HireInfo {
   int getBusinessNum();
   std::string getCompanyName();
   std::string getWorkType();
-
 };
 
 class Application {
  private:
   HireInfo* appliedHireInfo;
   static std::vector<Application*> allApplication;
-  static std::vector<Application*> getAllApplication();
-  int applicantNumber;
+  
+  std::string userId;
 
  public:
-  Application(HireInfo* , int );
-  static std::string deleteApplication(int , int );
+  Application(HireInfo* , string);
+  static std::string deleteApplication(string , int );
+  static std::vector<HireInfoSummary> getAllApplication(string userName);
   ~Application();
+  HireInfo* getAppliedHireInfo();
+  std::string getUserName();
 };
 
 #endif

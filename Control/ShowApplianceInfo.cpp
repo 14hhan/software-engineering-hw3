@@ -1,21 +1,24 @@
 using namespace std;
 
 #include "Control.h"
+#include<algorithm>
 
 
-void ShowApplianceInfo::sortByCompanyName(void) const
+void ShowApplianceInfo::showApplianceInfo(string userId) const
 {
+    vector<HireInfoSummary> ApplicationOfNormalUser = Application::getAllApplication(userId);
 
+    // sort by company name. 오름차순인지 검사 다시 해야함
+    sort(ApplicationOfNormalUser.begin(), ApplicationOfNormalUser.end(), compareByCompanyName);
+
+    // ApplicationOfNormalUser 에서 가공해야함
+
+
+    ShowApplianceInfoUI* showApplianceInfoUI = new ShowApplianceInfoUI();
+    showApplianceInfoUI->startInterface(ApplicationOfNormalUser);
 }
 
-void ShowApplianceInfo::showApplianceInfo(void) const
+bool compareByCompanyName(HireInfoSummary a, HireInfoSummary b)
 {
-    vector<Application*> allApplication = Application::getAllApplication();
-
-    // vector 가공
-    // 그 과정에서 HireInfo 정보도 가져와야됨
-
-    // 오름차순 정렬 필요
-
-    ShowApplianceInfoUI::startInterface();
+	return a.companyName < b.companyName;
 }

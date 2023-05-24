@@ -4,5 +4,7 @@ using namespace std;
 
 void ShowHireStatInfoUI::startInterface(void) const
 {
+    
+
 
 }

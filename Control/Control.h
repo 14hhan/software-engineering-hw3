@@ -32,21 +32,18 @@ class ApplyHireInfo {
 };
 
 
-
-
 // 송양기
 class ShowApplianceInfo
 {
 public:
-	void sortByCompanyName() const;
-  void showApplianceInfo() const;
+  void showApplianceInfo(string) const;
+  bool compareByCompanyName(HireInfoSummary, HireInfoSummary);
 };
 
 class CancelApplianceInfo
 {
 public:
-	std::string deleteApplicationInfo(int, int) const;
-	void sortByCompanyName() const;
+	std::string deleteApplicationInfo(string, int) const;
 };
 
 class ShowApplicationStatInfo
@@ -59,7 +56,7 @@ public:
 class ShowHireStatInfo
 {
 public:
-	void getApplicationInfoCnt() const;
+	void showHireStatInfo() const;
 	void sortByWorkType() const;
 };
 

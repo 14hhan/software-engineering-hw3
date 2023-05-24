@@ -1,15 +1,20 @@
+#include <string>
+#include <vector>
+#include "../Entity/Entity.h"
+#include"../Control/Control.h"
+
 class ShowApplianceInfoUI
 {
 public:
     // 인자 필요
-	void static startInterface(void);
+	void startInterface(vector<HireInfoSummary>);
 };
 
 class CancelApplianceInfoUI
 {
 public:
-	void startInterface(int) const;
-	
+	void startInterface(string, int) const;
+
 };
 
 class ShowApplicationStatInfoUI

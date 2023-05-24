@@ -1,11 +1,12 @@
 #include <algorithm>
 #include <vector>
 
+
 using namespace std;
 
 #include "./Control.h"
 
-SearchHireInfo::SearchHireInfo() {
+SearchHireInfo::SearchHireInfo(string userName) {
   this->hireInfoGroup = HireInfo::getAllHireInfo();
   int size = hireInfoGroup.size();
 
