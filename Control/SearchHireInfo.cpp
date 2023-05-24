@@ -1,12 +1,15 @@
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
 #include "./Control.h"
 
-SearchHireInfo::SearchHireInfo() {
-  this->hireInfoGroup = HireInfo::getAllHireInfo();
+SearchHireInfo::SearchHireInfo() {}
+
+vector<string> SearchHireInfo::sendSearchHireInfo() {
+  hireInfoGroup = HireInfo::getAllHireInfo();
   int size = hireInfoGroup.size();
 
   for (int i = 0; i < size; i++) {
@@ -16,9 +19,18 @@ SearchHireInfo::SearchHireInfo() {
     item.summary = summary;
     hireList.push_back(item);
   }
-}
 
-vector<string> SearchHireInfo::sendSearchHireInfo() {}
+  sortByCompanyName();
+
+  for (const HireListItem item : hireList) {
+    HireInfoSummary summary = item.summary;
+    cout << "Index: " << item.groupIndex;
+    cout << "Company: " << summary.companyName;
+    cout << "Work: " << summary.workType;
+    cout << "Number of Applicant: " << summary.applicantNum;
+    cout << "Due Date: " << summary.dueDate;
+  }
+}
 
 void SearchHireInfo::sortByCompanyName() {
   sort(hireList.begin(), hireList.end(), compareItem);
