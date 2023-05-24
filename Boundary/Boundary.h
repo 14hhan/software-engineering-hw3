@@ -26,5 +26,5 @@ public:
 class ShowHireStatInfoUI
 {
 public:
-	void startInterface(void) const;
+	void startInterface(vector<HireInfoSummary>) const;
 };

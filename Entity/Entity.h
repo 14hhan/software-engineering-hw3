@@ -46,6 +46,7 @@ struct HireInfoSummary {
   std::string applicantNum;
   std::string dueDate;
 };
+
 class HireInfo {
  private:
   std::string companyName;
@@ -53,17 +54,20 @@ class HireInfo {
   int businessNum;
   int applicantNum;
   int dueDate;
+  string userId;
   static std::vector<HireInfo*> allHireInfo;
 
  public:
-  HireInfo(std::string companyName, std::string workType, int dueDate, int businessNum);
+  HireInfo(std::string companyName, std::string workType, int dueDate, int businessNum, string userId);
   HireInfoSummary getHireInfo();
   void increaseApplicantNum();
   void decreaseApplicantNum();
   static std::vector<HireInfo*> getAllHireInfo();
+  static std::vector<HireInfoSummary> getCompanyUsersHireInfos(string);
   int getBusinessNum();
   std::string getCompanyName();
   std::string getWorkType();
+  std::string getUserId();
 };
 
 class Application {
@@ -76,10 +80,10 @@ class Application {
  public:
   Application(HireInfo* , string);
   static std::string deleteApplication(string , int );
-  static std::vector<HireInfoSummary> getAllApplication(string userName);
+  static std::vector<HireInfoSummary> getNormarUsersApplications(string);
   ~Application();
   HireInfo* getAppliedHireInfo();
-  std::string getUserName();
+  std::string getUserId();
 };
 
 #endif

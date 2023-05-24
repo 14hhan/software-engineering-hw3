@@ -14,7 +14,7 @@ Application::~Application() {
   allApplication.erase(remove(allApplication.begin(), allApplication.end(), this), allApplication.end());
 }
 
-vector<HireInfoSummary> Application::getAllApplication(string userId) { 
+vector<HireInfoSummary> Application::getNormarUsersApplications(string userId) { 
   // allApplication 을 가공해서 가공한 vector 반환해야.
 
   vector<HireInfoSummary> ApplicationOfNormalUser;
