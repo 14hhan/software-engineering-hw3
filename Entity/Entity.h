@@ -45,15 +45,21 @@ class HireInfo {
  private:
   std::string companyName;
   std::string workType;
+  int businessNum;
   int applicantNum;
   int dueDate;
   static std::vector<HireInfo*> allHireInfo;
 
  public:
-  HireInfo(std::string companyName, std::string workType, int dueDate);
+  HireInfo(std::string companyName, std::string workType, int dueDate, int businessNum);
   HireInfoSummary getHireInfo();
   void increaseApplicantNum();
+  void decreaseApplicantNum();
   static std::vector<HireInfo*> getAllHireInfo();
+  int getBusinessNum();
+  std::string getCompanyName();
+  std::string getWorkType();
+
 };
 
 class Application {
@@ -64,7 +70,9 @@ class Application {
   int applicantNumber;
 
  public:
-  Application(HireInfo* hireInfo, int registrationNumber);
+  Application(HireInfo* , int );
+  static std::string deleteApplication(int , int );
+  ~Application();
 };
 
 #endif

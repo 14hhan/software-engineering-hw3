@@ -9,6 +9,7 @@ class CancelApplianceInfoUI
 {
 public:
 	void startInterface(int) const;
+	
 };
 
 class ShowApplicationStatInfoUI
