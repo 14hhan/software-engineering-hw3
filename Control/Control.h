@@ -20,13 +20,13 @@ class SearchHireInfo {
 
  protected:
   std::vector<HireInfo*> hireInfoGroup;
-  vector<HireListItem> hireList;
+  std::vector<HireListItem> hireList;
   void sortByCompanyName();
 };
 
 class ApplyHireInfo : public SearchHireInfo {
  public:
-  bool sendCreateNewApplication(int chosenIndex);
+  bool sendCreateNewApplication(int registrationNumber, int chosenIndex);
 };
 
 #endif
