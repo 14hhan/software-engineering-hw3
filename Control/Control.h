@@ -20,7 +20,7 @@ class SearchHireInfo {
 
  private:
   std::vector<HireInfo*> hireInfoGroup;
-  HireListItem* hireList;
+  vector<HireListItem> hireList;
   void sortByCompanyName();
 };
 
