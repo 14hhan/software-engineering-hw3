@@ -49,6 +49,7 @@ public:
 class ShowApplicationStatInfo
 {
 public:
+  void showApplicationStatInfo(string);
 	void sortByMonth() const;
 	void sortByWorkType() const;
 };
@@ -56,7 +57,7 @@ public:
 class ShowHireStatInfo
 {
 public:
-	void showHireStatInfo() const;
+	void showHireStatInfo(string) const;
 	void sortByWorkType() const;
 };
 
