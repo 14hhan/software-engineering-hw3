@@ -25,7 +25,6 @@ class NormalUser : public User {
  public:
   NormalUser(std::string id, int password, std::string userName,
              int registrationNumber);
-  string getId();
 };
 
 class CompanyUser : public User {
