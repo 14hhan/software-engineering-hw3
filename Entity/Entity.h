@@ -11,33 +11,29 @@ class User {
 
  public:
   User(std::string id, int password);
-  virtual std::string getUserInfo();
+  virtual std::string getUserInfo();  // Q: 이거 virtual이 필요한가요?
 };
 
 class NormalUser : public User {
  private:
   std::string userName;
   int registrationNumber;
-  string id;
-  int password;
 
  public:
   NormalUser(std::string id, int password, std::string userName,
              int registrationNumber);
-  virtual std::string getUserInfo();
+  virtual std::string getUserInfo();  // Q: 이것도 virtual이 필요한가요?
 };
 
 class CompanyUser : public User {
  private:
   std::string companyName;
   int companyNumber;
-  string id;
-  int password;
 
  public:
   CompanyUser(std::string id, int password, std::string companyName,
               int companyNumber);
-  virtual std::string getUserInfo();
+  virtual std::string getUserInfo();  // Q: 이것도 virtual이 필요한가요?
 };
 
 struct HireInfoSummary {
