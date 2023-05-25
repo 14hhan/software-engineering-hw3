@@ -2,19 +2,18 @@
 #include <iostream>
 #include <vector>
 
-
 using namespace std;
 
 #include "./Control.h"
 
-SearchHireInfo::SearchHireInfo() {}
+ApplyHireInfo::ApplyHireInfo() {}
 
-SearchHireInfoUI* SearchHireInfo::getUI() {
-  SearchHireInfoUI* ui = new SearchHireInfoUI(this);
+ApplyHireInfoUI* ApplyHireInfo::getUI() {
+  ApplyHireInfoUI* ui = new ApplyHireInfoUI(this);
   return ui;
 }
 
-vector<string> SearchHireInfo::sendSearchHireInfo(string input) {
+vector<string> ApplyHireInfo::sendSearchHireInfo(string input) {
   hireInfoGroup = HireInfo::getAllHireInfo();
   int size = hireInfoGroup.size();
   for (int i = 0; i < size; i++) {
@@ -27,7 +26,7 @@ vector<string> SearchHireInfo::sendSearchHireInfo(string input) {
     }
   }
 
-  // sortByCompanyName();
+  sortByCompanyName();
 
   vector<string> response;
 
@@ -47,12 +46,20 @@ vector<string> SearchHireInfo::sendSearchHireInfo(string input) {
   return response;
 }
 
-bool compareItem1(HireListItem item1, HireListItem item2) {
+bool compareItem2(HireListItem item1, HireListItem item2) {
   string name1 = item1.summary.companyName;
   string name2 = item2.summary.companyName;
   return name1 > name2;
 }
 
-void SearchHireInfo::sortByCompanyName() {
-  sort(hireList.begin(), hireList.end(), compareItem1);
+void ApplyHireInfo::sortByCompanyName() {
+  sort(hireList.begin(), hireList.end(), compareItem2);
+}
+
+bool ApplyHireInfo::sendCreateNewApplication(int registrationNumber,
+                                             int chosenIndex) {
+  HireInfo* appliedCompany = hireInfoGroup[chosenIndex];
+  cout << hireInfoGroup.size() << endl;
+  Application* newApp = new Application(appliedCompany, registrationNumber);
+  return true;
 }

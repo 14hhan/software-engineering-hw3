@@ -8,27 +8,35 @@
 #include "../Boundary/Boundary.h"
 
 struct HireListItem {
-  int groupIndex;
-  HireInfoSummary summary;  // 의존성을 줄여야하나? string으로 쪼개야하나
-                            // 궁금하지만 귀찮다... 대충 살자
+  std::string groupIndex;
+  HireInfoSummary summary;
 };
 
 class SearchHireInfo {
  public:
   SearchHireInfo();
-  std::vector<std::string>
-  sendSearchHireInfo();  // TODO: UI에 대한 반환형 논의 필요
+  SearchHireInfoUI* getUI();
+  std::vector<std::string> sendSearchHireInfo(std::string input);
 
  private:
+  std::string InputWord;
   std::vector<HireInfo*> hireInfoGroup;
-  vector<HireListItem> hireList;
+  std::vector<HireListItem> hireList;
   void sortByCompanyName();
 };
 
 class ApplyHireInfo {
  public:
-  std::vector<std::string> sendSearchHireInfo();
-  bool sendCreateNewApplication();
+  ApplyHireInfo();
+  ApplyHireInfoUI* getUI();
+  std::vector<std::string> sendSearchHireInfo(std::string input);
+  bool sendCreateNewApplication(int registrationNumber, int chosenIndex);
+
+ private:
+  std::string InputWord;
+  std::vector<HireInfo*> hireInfoGroup;
+  std::vector<HireListItem> hireList;
+  void sortByCompanyName();
 };
 
 

@@ -3,6 +3,8 @@ using namespace std;
 #include "./Entity.h"
 #include<string.h>
 
+std::vector<HireInfo*> HireInfo::allHireInfo;
+
 HireInfo::HireInfo(string companyName, string workType, int dueDate, int businessNum, string userId) {
   this->companyName = companyName;
   this->workType = workType;
