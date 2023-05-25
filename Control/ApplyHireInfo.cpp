@@ -62,12 +62,11 @@ void ApplyHireInfo::sortByCompanyName() {
   sort(hireList.begin(), hireList.end(), compareItem2);
 }
 
-bool ApplyHireInfo::sendCreateNewApplication(int registrationNumber,
-                                             int chosenIndex) {
+bool ApplyHireInfo::sendCreateNewApplication(string userId, int chosenIndex) {
   // 입력받은 고유식별번호와 검색결과에서 선택한 채용 정보 번호를 입력해
   // 원하는 채용 정보에 지원한다
   HireInfo* appliedCompany = hireInfoGroup[chosenIndex];
   cout << hireInfoGroup.size() << endl;
-  Application* newApp = new Application(appliedCompany, registrationNumber);
+  Application* newApp = new Application(appliedCompany, userId);
   return true;
 }

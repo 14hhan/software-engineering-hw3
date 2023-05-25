@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "../Entity/Entity.h"
 #include "../Boundary/Boundary.h"
+#include "../Entity/Entity.h"
 
 struct HireListItem {
   std::string groupIndex;
@@ -14,7 +14,6 @@ struct HireListItem {
 
 class SearchHireInfo {
  public:
-  SearchHireInfo();
   SearchHireInfoUI* getUI();
   std::vector<std::string> sendSearchHireInfo(std::string input);
 
@@ -27,10 +26,9 @@ class SearchHireInfo {
 
 class ApplyHireInfo {
  public:
-  ApplyHireInfo();
   ApplyHireInfoUI* getUI();
   std::vector<std::string> sendSearchHireInfo(std::string input);
-  bool sendCreateNewApplication(int registrationNumber, int chosenIndex);
+  bool sendCreateNewApplication(string userId, int chosenIndex);
 
  private:
   std::string InputWord;
@@ -39,34 +37,29 @@ class ApplyHireInfo {
   void sortByCompanyName();
 };
 
-
 // 송양기
-class ShowApplianceInfo
-{
-public:
+class ShowApplianceInfo {
+ public:
   void showApplianceInfo(string) const;
   bool compareByCompanyName(HireInfoSummary, HireInfoSummary);
 };
 
-class CancelApplianceInfo
-{
-public:
-	std::string deleteApplicationInfo(string, int) const;
+class CancelApplianceInfo {
+ public:
+  std::string deleteApplicationInfo(string, int) const;
 };
 
-class ShowApplicationStatInfo
-{
-public:
+class ShowApplicationStatInfo {
+ public:
   void showApplicationStatInfo(string);
-	void sortByMonth() const;
-	void sortByWorkType() const;
+  void sortByMonth() const;
+  void sortByWorkType() const;
 };
 
-class ShowHireStatInfo
-{
-public:
-	void showHireStatInfo(string) const;
-	void sortByWorkType() const;
+class ShowHireStatInfo {
+ public:
+  void showHireStatInfo(string) const;
+  void sortByWorkType() const;
 };
 
 #endif

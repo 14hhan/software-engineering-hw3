@@ -20,10 +20,9 @@ void ApplyHireInfoUI::searchHireInfo(string input) {
   }
 }
 
-void ApplyHireInfoUI::applyHireInfo(int registrationNumber, int chosenIndex) {
+void ApplyHireInfoUI::applyHireInfo(string userId, int chosenIndex) {
   string message = "testing";
-  bool response =
-      control->sendCreateNewApplication(registrationNumber, chosenIndex);
+  bool response = control->sendCreateNewApplication(userId, chosenIndex);
   message = response ? "APPLYED" : "REJECTED";
   cout << message << endl;
 }
