@@ -3,22 +3,28 @@
 
 using namespace std;
 
-#include "../Boundary/Boundary.h"
-#include "../Control/Control.h"
+#include "Boundary.h"
+#include "Control.h"
 
-ApplyHireInfoUI::ApplyHireInfoUI(ApplyHireInfo* control)
-    : SearchHireInfoUI(control) {
+ApplyHireInfoUI::ApplyHireInfoUI(ApplyHireInfo* control) {
   this->control = control;
   startInterface();
 };
 
-void ApplyHireInfoUI::startInterface() {
-  cout << "2-2.회사 검색 입력창 출력...\n";
-};
+void ApplyHireInfoUI::startInterface() { cout << "2-2 Apply Started...\n"; };
+
+void ApplyHireInfoUI::searchHireInfo(string input) {
+  vector<string> response = control->sendSearchHireInfo(input);
+  for (string summary : response) {
+    cout << summary << "endl";
+  }
+}
 
 void ApplyHireInfoUI::applyHireInfo(int registrationNumber, int chosenIndex) {
+  cout << registrationNumber << chosenIndex << endl;
+  string message = "testing";
   bool response =
       control->sendCreateNewApplication(registrationNumber, chosenIndex);
-  string message = response ? "지원이 완료됐습니다" : "지원에 실패했습니다.";
+
   cout << message << endl;
 }

@@ -15,10 +15,11 @@ class SearchHireInfoUI {
   SearchHireInfo* control;
 };
 
-class ApplyHireInfoUI : public SearchHireInfoUI {
+class ApplyHireInfoUI {
  public:
   ApplyHireInfoUI(ApplyHireInfo* control);
   void startInterface();
+  void searchHireInfo(std::string input);
   void applyHireInfo(int registrationNumber, int chosenIndex);
 
  private:

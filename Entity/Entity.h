@@ -41,6 +41,7 @@ struct HireInfoSummary {
   std::string applicantNum;
   std::string dueDate;
 };
+
 class HireInfo {
  private:
   std::string companyName;
