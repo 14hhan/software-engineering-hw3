@@ -58,7 +58,8 @@ class HireInfo {
   static std::vector<HireInfo*> allHireInfo;
 
  public:
-  HireInfo(std::string companyName, std::string workType, int dueDate, int businessNum, string userId);
+  HireInfo(std::string companyName, std::string workType, int dueDate,
+           int businessNum, string userId);
   HireInfoSummary getHireInfo();
   void increaseApplicantNum();
   void decreaseApplicantNum();
@@ -74,14 +75,14 @@ class Application {
  private:
   HireInfo* appliedHireInfo;
   static std::vector<Application*> allApplication;
-  
+
   std::string userId;
 
  public:
-  Application(HireInfo* , string);
-  static std::string deleteApplication(string , int );
-  static std::vector<HireInfoSummary> getNormarUsersApplications(string);
+  Application(HireInfo*, string);
   ~Application();
+  static std::string deleteApplication(string, int);
+  static std::vector<HireInfoSummary> getNormarUsersApplications(string);
   HireInfo* getAppliedHireInfo();
   std::string getUserId();
 };
