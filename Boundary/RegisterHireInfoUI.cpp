@@ -1,6 +1,7 @@
-#include <stdio.h>
+#include <iostream>
+#include <vector>
 
-#include <string>
+using namespace std;
 
 #include "Boundary.h"
 
@@ -16,23 +17,12 @@ FILE *in_fp, *out_fp;
 FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
 FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
-// RegisterHireInfo 객체를 생성하는 생성자 함수
-RegisterHireInfo::RegisterHireInfo() {
-  // 로그인 중, 회사 회원 상태 일 때만 채용 정보를 등록 할 수 있음
-  if (loginState) {
-    RegisterHireInfoUI* registerHireInfoUI = new RegisterHireInfoUI;
-    registerHireInfoUI->InputHireInfotData(this);
-  }
-}
-
 // RegisterHireInfo UI를 보여주는 함수
-void RegisterHireInfoUI::StartInterface() {
-  RegisterHireInfoUI* registerHireInfoUI = new RegisterHireInfoUI;
-};
+void RegisterHireInfoUI::StartInterface() { cout << "3.1. 채용 정보 등록"; };
 
 // 입력받은 채용 정보들을 컨트롤 클래스에게 전달하는 함수
 // 값을 전달할 컨트롤 클래스:  RegisterHireInfo* registerHireInfo
-void RegisterHireInfoUI::InputHireInfoData(RegisterHireInfo* registerHireInfo) {
+void RegisterHireInfoUI::InputHireInfoData(string input) {
   std::string workType, dueDate;
   std::int quota;  // 인원 수는 지원자 수와 다른 값이므로 quota로
 
@@ -40,5 +30,8 @@ void RegisterHireInfoUI::InputHireInfoData(RegisterHireInfo* registerHireInfo) {
   fscanf(in_fp, "%s %s %u", workType, dueDate, quota);
 
   // 입력받은 정보를 컨트롤 클래스로 전달
-  registerHireInfo->sendHireInfoData(workType, dueDate, quota);
+  control->sendHireInfoData(workType, dueDate, quota);
+
+  // 출력
+  cout << workType, dueDate, quota << endl;
 };
