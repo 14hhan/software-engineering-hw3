@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 
-
 using namespace std;
 
 #include "./Control.h"
@@ -27,7 +26,7 @@ vector<string> SearchHireInfo::sendSearchHireInfo(string input) {
     }
   }
 
-  // sortByCompanyName();
+  sortByCompanyName();
 
   vector<string> response;
 
