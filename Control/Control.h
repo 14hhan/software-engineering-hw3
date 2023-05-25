@@ -19,6 +19,7 @@ class SearchHireInfo {
   sendSearchHireInfo();  // TODO: UI에 대한 반환형 논의 필요
 
  protected:
+  std::string InputWord;
   std::vector<HireInfo*> hireInfoGroup;
   std::vector<HireListItem> hireList;
   void sortByCompanyName();

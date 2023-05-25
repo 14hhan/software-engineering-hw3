@@ -9,15 +9,17 @@ using namespace std;
 SearchHireInfo::SearchHireInfo() {}
 
 vector<string> SearchHireInfo::sendSearchHireInfo() {
+  InputWord = "abcd";
   hireInfoGroup = HireInfo::getAllHireInfo();
   int size = hireInfoGroup.size();
-
   for (int i = 0; i < size; i++) {
     HireInfoSummary summary = hireInfoGroup[i]->getHireInfo();
-    HireListItem item;
-    item.groupIndex = i;
-    item.summary = summary;
-    hireList.push_back(item);
+    if (summary.companyName.compare(InputWord) == 0) {
+      HireListItem item;
+      item.groupIndex = i;
+      item.summary = summary;
+      hireList.push_back(item);
+    }
   }
 
   sortByCompanyName();
