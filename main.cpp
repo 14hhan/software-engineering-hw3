@@ -14,6 +14,9 @@ void doTask();
 void join();
 void program_exit();
 
+int loginNum = 0;
+string userId;
+
 ifstream inputFile(INPUT_FILE_NAME);
 ofstream outputFile(OUTPUT_FILE_NAME);
 
@@ -60,13 +63,24 @@ void doTask() {
             break;
           case 2:
             break;
+          case 3:
+            ShowApplianceInfo* showApplianceInfo = new ShowApplianceInfo();
+            showApplianceInfo->showApplianceInfo(userId);
+            break;
+          case 4:
+            CancelApplianceInfoUI* cancelApplianceInfoUI = new CancelApplianceInfoUI();
+            cancelApplianceInfoUI->startInterface(userId, businessNum); // businessNum을 startInterface 안에서 하는 방법도 있음.
         }
       }
       case 5: {
         switch (menu_level_2) {
           case 1:
+            ShowApplicationStatInfo* showApplicationStatInfo = new ShowApplicationStatInfo();
+            showApplicationStatInfo->showApplicationStatInfo(userId);
             break;
           case 2:
+            ShowHireStatInfo* showHireStatInfo = new ShowHireStatInfo();
+            showHireStatInfo->showHireStatInfo(userId);
             break;
         }
       }
