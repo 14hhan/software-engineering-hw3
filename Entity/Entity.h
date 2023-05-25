@@ -11,7 +11,7 @@ class User {
 
  public:
   User(std::string id, int password);
-  virtual std::string getUserInfo();  // Q: 이거 virtual이 필요한가요?
+  virtual std::string getUserInfo();
 };
 
 class NormalUser : public User {
