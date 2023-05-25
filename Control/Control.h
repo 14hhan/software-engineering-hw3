@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "Boundary.h"
-#include "Entity.h"
+#include "../Entity/Entity.h"
+#include "../Boundary/Boundary.h"
 
 struct HireListItem {
   std::string groupIndex;
@@ -37,6 +37,36 @@ class ApplyHireInfo {
   std::vector<HireInfo*> hireInfoGroup;
   std::vector<HireListItem> hireList;
   void sortByCompanyName();
+};
+
+
+// 송양기
+class ShowApplianceInfo
+{
+public:
+  void showApplianceInfo(string) const;
+  bool compareByCompanyName(HireInfoSummary, HireInfoSummary);
+};
+
+class CancelApplianceInfo
+{
+public:
+	std::string deleteApplicationInfo(string, int) const;
+};
+
+class ShowApplicationStatInfo
+{
+public:
+  void showApplicationStatInfo(string);
+	void sortByMonth() const;
+	void sortByWorkType() const;
+};
+
+class ShowHireStatInfo
+{
+public:
+	void showHireStatInfo(string) const;
+	void sortByWorkType() const;
 };
 
 #endif
