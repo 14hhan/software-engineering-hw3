@@ -55,3 +55,5 @@ int HireInfo::getBusinessNum() { return this->businessNum; }
 string HireInfo::getCompanyName() { return this->companyName; }
 
 string HireInfo::getWorkType() { return this->workType; }
+
+string HireInfo::getUserId() { return this->userId; }
