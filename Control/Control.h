@@ -20,6 +20,7 @@ class SearchHireInfo {
   std::vector<std::string> sendSearchHireInfo(std::string input);
 
  protected:
+  static bool compareItem(HireListItem item1, HireListItem item2);
   std::string InputWord;
   std::vector<HireInfo*> hireInfoGroup;
   std::vector<HireListItem> hireList;

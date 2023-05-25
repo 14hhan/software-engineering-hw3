@@ -2,6 +2,8 @@ using namespace std;
 
 #include "./Entity.h"
 
+std::vector<HireInfo*> HireInfo::allHireInfo;
+
 HireInfo::HireInfo(string companyName, string workType, int dueDate) {
   this->companyName = companyName;
   this->workType = workType;
