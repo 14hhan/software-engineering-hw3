@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+#include "../Boundary/Boundary.h"
 #include "../Entity/Entity.h"
 
 struct HireListItem {
@@ -15,8 +16,8 @@ struct HireListItem {
 class SearchHireInfo {
  public:
   SearchHireInfo();
-  std::vector<std::string>
-  sendSearchHireInfo();  // TODO: UI에 대한 반환형 논의 필요
+  SearchHireInfoUI* getUI();
+  std::vector<std::string> sendSearchHireInfo(std::string input);
 
  protected:
   std::string InputWord;

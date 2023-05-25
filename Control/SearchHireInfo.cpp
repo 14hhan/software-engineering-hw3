@@ -8,7 +8,12 @@ using namespace std;
 
 SearchHireInfo::SearchHireInfo() {}
 
-vector<string> SearchHireInfo::sendSearchHireInfo() {
+SearchHireInfoUI* SearchHireInfo::getUI() {
+  SearchHireInfoUI* ui = new SearchHireInfoUI(this);
+  return ui;
+}
+
+vector<string> SearchHireInfo::sendSearchHireInfo(string input) {
   InputWord = "abcd";
   hireInfoGroup = HireInfo::getAllHireInfo();
   int size = hireInfoGroup.size();
