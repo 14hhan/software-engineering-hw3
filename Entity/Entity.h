@@ -39,6 +39,7 @@ class HireInfo {
  private:
   std::string companyName;
   std::string workType;
+  int quota;
   int applicantNum;
   int dueDate;
 
