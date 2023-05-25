@@ -6,17 +6,24 @@
 
 #include "Boundary.h"
 
-// showHireInfo 컨트롤 클래스의 생성자 함수
-void ShowHireInfoUI::showHireInfo(ShowHireInfo* showHireInfo) {
-  // 로그인 상태에서 회사 회원 자신이 등록한 채용 정보 조회 가능
-  if (loginState) {
-    // 클래스를 생성
-    ShowHireInfoUI* ShowHireInfoUI = new ShowHireInfoUI;
-  }
-};
+ShowHireInfoUI::ShowHireInfoUI(ShowHireInfo* control) {
+  this->control;
+  startInterface();
+}
 
 // showHireInfo UI를 보여주는 함수
-void ShowHireInfoUI::startInterface() { cout << "3.2. 등록된 채용 정보 조회"; };
+void ShowHireInfoUI::startInterface() {
+  cout << "3.2. 등록된 채용 정보 조회" << endl;
+};
 
-// 출력
-// workType, dueDate, quota
+void ShowHireInfoUI::showHireInfo() {
+  // ????
+  vector<HireInfo*> hireInfos = control->sendSearchHireInfo();
+
+  // 출력
+  // for 문 내에 어떻게 작성해야할지?
+  for () {
+    cout << hireInfo->GetWorkType() << hireInfo->GetQuota()
+         << hireInfo->GetdueDate() << "endl";
+  }
+}
