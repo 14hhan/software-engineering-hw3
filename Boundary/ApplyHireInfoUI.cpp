@@ -16,15 +16,14 @@ void ApplyHireInfoUI::startInterface() { cout << "2-2 Apply Started...\n"; };
 void ApplyHireInfoUI::searchHireInfo(string input) {
   vector<string> response = control->sendSearchHireInfo(input);
   for (string summary : response) {
-    cout << summary << "endl";
+    cout << summary << endl;
   }
 }
 
 void ApplyHireInfoUI::applyHireInfo(int registrationNumber, int chosenIndex) {
-  cout << registrationNumber << chosenIndex << endl;
   string message = "testing";
   bool response =
       control->sendCreateNewApplication(registrationNumber, chosenIndex);
-
+  message = response ? "APPLYED" : "REJECTED";
   cout << message << endl;
 }

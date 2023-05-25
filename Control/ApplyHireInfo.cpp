@@ -59,6 +59,7 @@ void ApplyHireInfo::sortByCompanyName() {
 bool ApplyHireInfo::sendCreateNewApplication(int registrationNumber,
                                              int chosenIndex) {
   HireInfo* appliedCompany = hireInfoGroup[chosenIndex];
+  cout << hireInfoGroup.size() << endl;
   Application* newApp = new Application(appliedCompany, registrationNumber);
   return true;
 }
