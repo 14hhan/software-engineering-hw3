@@ -72,19 +72,18 @@ class HireInfo {
 };
 
 class Application {
- private:
-  HireInfo* appliedHireInfo;
-  static std::vector<Application*> allApplication;
-
-  std::string userId;
-
  public:
   Application(HireInfo*, string);
   ~Application();
+  static std::vector<HireInfoSummary> getNormalUsersApplications(string);
   static std::string deleteApplication(string, int);
-  static std::vector<HireInfoSummary> getNormarUsersApplications(string);
   HireInfo* getAppliedHireInfo();
   std::string getUserId();
+
+ private:
+  HireInfo* appliedHireInfo;
+  static std::vector<Application*> allApplication;
+  std::string userId;
 };
 
 #endif
