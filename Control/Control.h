@@ -35,7 +35,7 @@ class Logout {
 
 class SearchHireInfo {
  public:
-  SearchHireInfoUI* getUI();
+  SearchHireInfoUI* getUI(std::ifstream& inputFile, std::ofstream& outputFile);
   std::vector<std::string> sendSearchHireInfo(std::string input);
 
  private:

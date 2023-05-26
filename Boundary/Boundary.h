@@ -13,12 +13,15 @@ class ApplyHireInfo;
 
 class SearchHireInfoUI {
  public:
-  SearchHireInfoUI(SearchHireInfo* control);
+  SearchHireInfoUI(SearchHireInfo* control, std::ifstream& inputFile,
+                   std::ofstream& outputFile);
   void startInterface();
-  void searchHireInfo(std::string input);
+  void searchHireInfo();
 
- protected:
+ private:
   SearchHireInfo* control;
+  std::ifstream* inputFile;
+  std::ofstream* outputFile;
 };
 
 class ApplyHireInfoUI {

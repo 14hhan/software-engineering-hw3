@@ -80,6 +80,9 @@ void doTask() {
       case 4: {
         switch (menu_level_2) {
           case 1:
+            SearchHireInfo* control = new SearchHireInfo();
+            SearchHireInfoUI* ui = control->getUI(inputFile, outputFile);
+            ui->searchHireInfo();
             break;
           case 2:
             break;
