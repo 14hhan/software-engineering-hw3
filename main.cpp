@@ -80,8 +80,19 @@ void doTask() {
       case 4: {
         switch (menu_level_2) {
           case 1:
+            // 채용 정보 검색
+            SearchHireInfo* searchHireInfo = new SearchHireInfo();
+            SearchHireInfoUI* searchHireInfoUi =
+                searchHireInfo->getUI(inputFile, outputFile);
+            searchHireInfoUi->searchHireInfo();
             break;
           case 2:
+            // 채용 정보 지원
+            ApplyHireInfo* applyHireInfo = new ApplyHireInfo();
+            ApplyHireInfoUI* applyHireInfoUi =
+                applyHireInfo->getUI(inputFile, outputFile);
+            applyHireInfoUi->searchHireInfo();
+            applyHireInfoUi->applyHireInfo(userId);
             break;
           case 3: {
             ShowApplianceInfo* showApplianceInfo = new ShowApplianceInfo();
