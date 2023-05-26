@@ -11,7 +11,8 @@ using namespace std;
 void doTask();
 void program_exit(ofstream& outFile);
 
-int loginNum = 0;
+int loginNum =
+    0;  // 로그인 상태시 각 회원 종류 고유 번호(1 or 2), 비 로그인 상태 시 0
 string userId;
 
 int main() {
@@ -37,7 +38,8 @@ void doTask() {
           case 1: {
             RegisterUserUI* registerUserUI = new RegisterUserUI();
             registerUserUI->startInterface(outputFile);
-            loginNum = registerUserUI->createUser(inputFile, outputFile);
+            loginNum = registerUserUI->createUser(
+                inputFile, outputFile);  // 회원 종류(일반, 회사) 반환
             break;
           }
           // 1.2. 회원탈퇴
@@ -55,14 +57,16 @@ void doTask() {
           case 1: {
             LoginUI* loginUI = new LoginUI();
             loginUI->startInterface(outputFile);
-            userId = loginUI->startLogin(inputFile, outputFile);
+            userId = loginUI->startLogin(
+                inputFile, outputFile);  // 현재 로그인 된 회원 id 반환
             break;
           }
           case 2: {
             LogoutUI* logoutUI = new LogoutUI();
             logoutUI->startInterface(outputFile);
-            userId = logoutUI->startLogout(userId, outputFile);
-            loginNum = 0;
+            userId = logoutUI->startLogout(
+                userId, outputFile);  // 현재 로그아웃 된 회원 id 반환
+            loginNum = 0;             // 로그인 여부 0으로 초기화
             break;
           }
         }
