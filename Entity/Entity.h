@@ -46,7 +46,7 @@ struct HireInfoSummary {
 class HireInfo {
  public:
   HireInfo(std::string companyName, std::string workType, int dueDate,
-           int businessNum, string userId, int quota);
+           int businessNum, string userId;
   static std::vector<HireInfo*> getAllHireInfo();
   static std::vector<HireInfoSummary> getCompanyUsersHireInfos(string);
   HireInfoSummary getHireInfo();
@@ -56,9 +56,8 @@ class HireInfo {
   std::string getCompanyName();
   std::string getWorkType();
   std::string getUserId();
-  std::string getHireInfo();
-  int GetQuota() { return quota; }           // 인원수 반환
-  std::string GetdueDate() { return dueDate; }    // 신청 마감일 반환
+  std::string getDueDate() {
+    return dueDate; }    // 신청 마감일 반환
 
  private:
   static std::vector<HireInfo*> allHireInfo;
