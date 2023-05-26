@@ -2,19 +2,19 @@ using namespace std;
 
 #include "Entity.h"
 
-User::User(string id, int password) {
+User::User(string id, string password) {
   this->id = id;
   this->password = password;
 }
 
-NormalUser::NormalUser(string id, int password, string userName,
+NormalUser::NormalUser(string id, string password, string userName,
                        int registrationNumber)
     : User::User(id, password) {
   this->userName = userName;
   this->registrationNumber = registrationNumber;
 }
 
-CompanyUser::CompanyUser(string id, int password, string companyName,
+CompanyUser::CompanyUser(string id, string password, string companyName,
                          int companyNumber)
     : User::User(id, password) {
   this->companyName = companyName;

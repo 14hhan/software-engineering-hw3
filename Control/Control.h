@@ -4,12 +4,33 @@
 #include <string>
 #include <vector>
 
-#include "../Entity/Entity.h"
 #include "../Boundary/Boundary.h"
+#include "../Entity/Entity.h"
 
 struct HireListItem {
   std::string groupIndex;
   HireInfoSummary summary;
+};
+
+class RegisterUser {
+ public:
+  void addUser(int userType, string id, string password, string name,
+               int number);
+};
+
+class WithdrawUser {
+ public:
+  void deleteUser(string id);
+};
+
+class Login {
+ public:
+  void login(string id, string password);
+};
+
+class Logout {
+ public:
+  void logout(string id);
 };
 
 class SearchHireInfo {
@@ -39,34 +60,29 @@ class ApplyHireInfo {
   void sortByCompanyName();
 };
 
-
 // 송양기
-class ShowApplianceInfo
-{
-public:
+class ShowApplianceInfo {
+ public:
   void showApplianceInfo(string) const;
   bool compareByCompanyName(HireInfoSummary, HireInfoSummary);
 };
 
-class CancelApplianceInfo
-{
-public:
-	std::string deleteApplicationInfo(string, int) const;
+class CancelApplianceInfo {
+ public:
+  std::string deleteApplicationInfo(string, int) const;
 };
 
-class ShowApplicationStatInfo
-{
-public:
+class ShowApplicationStatInfo {
+ public:
   void showApplicationStatInfo(string);
-	void sortByMonth() const;
-	void sortByWorkType() const;
+  void sortByMonth() const;
+  void sortByWorkType() const;
 };
 
-class ShowHireStatInfo
-{
-public:
-	void showHireStatInfo(string) const;
-	void sortByWorkType() const;
+class ShowHireStatInfo {
+ public:
+  void showHireStatInfo(string) const;
+  void sortByWorkType() const;
 };
 
 #endif

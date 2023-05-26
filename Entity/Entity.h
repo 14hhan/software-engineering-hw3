@@ -7,10 +7,10 @@
 class User {
  private:
   std::string id;
-  int password;
+  std::string password;
 
  public:
-  User(std::string id, int password);
+  User(std::string id, std::string password);
   virtual std::string getUserInfo();
 };
 
@@ -19,10 +19,10 @@ class NormalUser : public User {
   std::string userName;
   int registrationNumber;
   string id;
-  int password;
+  std::string password;
 
  public:
-  NormalUser(std::string id, int password, std::string userName,
+  NormalUser(std::string id, std::string password, std::string userName,
              int registrationNumber);
   virtual std::string getUserInfo();
 };
@@ -32,10 +32,10 @@ class CompanyUser : public User {
   std::string companyName;
   int companyNumber;
   string id;
-  int password;
+  std::string password;
 
  public:
-  CompanyUser(std::string id, int password, std::string companyName,
+  CompanyUser(std::string id, std::string password, std::string companyName,
               int companyNumber);
   virtual std::string getUserInfo();
 };
@@ -58,7 +58,8 @@ class HireInfo {
   static std::vector<HireInfo*> allHireInfo;
 
  public:
-  HireInfo(std::string companyName, std::string workType, int dueDate, int businessNum, string userId);
+  HireInfo(std::string companyName, std::string workType, int dueDate,
+           int businessNum, string userId);
   HireInfoSummary getHireInfo();
   void increaseApplicantNum();
   void decreaseApplicantNum();
@@ -74,12 +75,12 @@ class Application {
  private:
   HireInfo* appliedHireInfo;
   static std::vector<Application*> allApplication;
-  
+
   std::string userId;
 
  public:
-  Application(HireInfo* , string);
-  static std::string deleteApplication(string , int );
+  Application(HireInfo*, string);
+  static std::string deleteApplication(string, int);
   static std::vector<HireInfoSummary> getNormarUsersApplications(string);
   ~Application();
   HireInfo* getAppliedHireInfo();
