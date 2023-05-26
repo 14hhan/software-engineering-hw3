@@ -26,7 +26,7 @@ class ApplyHireInfoUI {
   ApplyHireInfoUI(ApplyHireInfo* control);
   void startInterface();
   void searchHireInfo(std::string input);
-  void applyHireInfo(string userId, int chosenIndex);
+  void applyHireInfo(std::string userId, int chosenIndex);
 
  private:
   ApplyHireInfo* control;
@@ -35,54 +35,54 @@ class ApplyHireInfoUI {
 class ShowApplianceInfoUI {
  public:
   // 인자 필요
-  void startInterface(vector<HireInfoSummary>);
+  void startInterface(std::vector<HireInfoSummary>);
 };
 
 class CancelApplianceInfoUI {
  public:
-  void startInterface(string, int) const;
+  void startInterface(std::string, int);
 };
 
 class ShowApplicationStatInfoUI {
  public:
-  void startInterface(void) const;
+  void startInterface(void);
 };
 
 class ShowHireStatInfoUI {
  public:
-  void startInterface(vector<HireInfoSummary>) const;
+  void startInterface(std::vector<HireInfoSummary>);
 };
 
 class RegisterUserUI {
  public:
-  void startInterface(ofstream& outputFile);
-  int createUser(ifstream& inputFile, ofstream& outputFile);
+  void startInterface(std::ofstream& outputFile);
+  int createUser(std::ifstream& inputFile, std::ofstream& outputFile);
 };
 
 class WithdrawUserUI {
  public:
-  void startInterface(ofstream& outputFile);
-  void startWithdraw(string userId, ofstream& outputFile);
+  void startInterface(std::ofstream& outputFile);
+  void startWithdraw(std::string userId, std::ofstream& outputFile);
 };
 
 class LoginUI {
  public:
-  void startInterface(ofstream& outputFile);
-  string startLogin(ifstream& inputFile, ofstream& outputFile);
+  void startInterface(std::ofstream& outputFile);
+  std::string startLogin(std::ifstream& inputFile, std::ofstream& outputFile);
 };
 
 class LogoutUI {
  public:
-  void startInterface(ofstream& outputFile);
-  string startLogout(string userId, ofstream& outputFile);
+  void startInterface(std::ofstream& outputFile);
+  std::string startLogout(std::string userId, std::ofstream& outputFile);
 };
 
 // 채용정보 등록 바운더리 클래스
 class RegisterHireInfoUI {
  public:
   RegisterHireInfoUI(RegisterHireInfo* control);
-  void startInterface(ofstream& outputFile);
-  void sendHireInfoData(ShowHireInfo* showHireInfo);
+  void startInterface(std::ofstream& outputFile);
+  void InputHireInfoData(std::ifstream& inputFile, std::ofstream& outputFile);
 
  private:
   RegisterHireInfo* control;
