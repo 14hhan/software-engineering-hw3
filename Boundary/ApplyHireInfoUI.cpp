@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 using namespace std;
@@ -37,14 +38,19 @@ void ApplyHireInfoUI::searchHireInfo() {
   }
 }
 
-void ApplyHireInfoUI::applyHireInfo() {
+void ApplyHireInfoUI::applyHireInfo(string userId) {
   // Actor가 호출하는 Application 생성 함수
-  string message = "testing";
+  string message = "FAILED";
   string input;
+  int companyNumber;
+
   if (inputFile->is_open()) {
     getline(*inputFile, input);
   }
-  bool response = control->sendCreateNewApplication(input);
+  stringstream ssInt(input);
+  ssInt >> companyNumber;
+
+  bool response = control->sendCreateNewApplication(userId, companyNumber);
   message = response ? "APPLYED" : "REJECTED";
   cout << message << endl;
 }

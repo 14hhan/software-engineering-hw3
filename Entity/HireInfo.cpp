@@ -57,5 +57,3 @@ string HireInfo::getCompanyName() { return this->companyName; }
 string HireInfo::getWorkType() { return this->workType; }
 
 string HireInfo::getUserId() { return this->userId; }
-
-string HireInfo::getDueDate() { return this->dueDate; }

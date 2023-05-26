@@ -30,7 +30,7 @@ class ApplyHireInfoUI {
                   std::ofstream& outputFile);
   void startInterface();
   void searchHireInfo();
-  void applyHireInfo();
+  void applyHireInfo(std::string userId);
 
  private:
   ApplyHireInfo* control;
