@@ -3,13 +3,11 @@ using namespace std;
 #include "Control.h"
 #include <map>
 
+// 일반회원의 ID를 받아서 지원통계정보를 생성한다. 이후 그 정보를 ShowApplicationStatInfoUI 클래스의 startInterface함수에 인자로 넘긴다.
 void ShowApplicationStatInfo::showApplicationStatInfo(string userId) {
     // 일반회원 : 업무별 지원횟수 출력
-    // 일반회원이 작성한 Application을 우선 다 불러온 후
-        // 회사별이 아니라 업무별로 카운트 해야 함!!
     vector<HireInfoSummary> normarUsersApplications = Application::getNormalUsersApplications(userId);
 
-    // 새로운 자료구조가 필요
     map<string, int> workTypeCount;
     workTypeCount["h"] = 10;
 

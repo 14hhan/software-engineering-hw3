@@ -39,7 +39,6 @@ string Application::deleteApplication(string userId, int businessNum) {
     if ((allApplication[i]->getUserId() == userId) &&
         (allApplication[i]->getAppliedHireInfo()->getBusinessNum() ==
          businessNum)) {
-      // 백업 -> 저장 -> 리턴
       // 회사이름, 사업자번호, 업무
 
       Application* targetApplication = allApplication[i];
@@ -55,6 +54,8 @@ string Application::deleteApplication(string userId, int businessNum) {
   }
 }
 
+// 모든 HireInfo*를 담고있는 vector를 반환한다.
 HireInfo* Application::getAppliedHireInfo() { return appliedHireInfo; }
 
+// ID를 반환한다.
 string Application::getUserId() { return userId; }

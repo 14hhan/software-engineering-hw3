@@ -3,7 +3,7 @@ using namespace std;
 #include "Control.h"
 
 
-
+// 기능: 일반사용자의 이름과 채용정보의 사업자번호를 받아서 그 Application 객체를 삭제한다.
 string CancelApplianceInfo::deleteApplicationInfo(string userName, int businessNum) const
 {
     // Application에 객체 삭제 요청.(지원자정보 + 회사번호를 기반으로)
