@@ -1,7 +1,7 @@
 using namespace std;
 
 #include "Control.h"
-#include "Entity/Entity.h"
+#include "Entity.h"
 
 void RegisterUser::addUser(int userType, string id,
                            string password,  // 새 회원 등록 함수

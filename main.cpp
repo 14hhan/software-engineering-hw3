@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#include "Boundary/Boundary.h"
+#include "Boundary.h"
 
 #define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"

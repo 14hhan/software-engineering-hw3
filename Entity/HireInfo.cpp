@@ -2,7 +2,7 @@ using namespace std;
 
 #include <string.h>
 
-#include "./Entity.h"
+#include "Entity.h"
 
 std::vector<HireInfo*> HireInfo::allHireInfo;
 

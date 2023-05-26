@@ -1,7 +1,7 @@
 using namespace std;
 #include <string.h>
 
-#include "./Entity.h"
+#include "Entity.h"
 
 Application::Application(HireInfo* hireInfo, string userId) {
   // 지원한 채용정보의 포인터, 유저 ID를 저장한다
