@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 
-#include "../Control/Control.h"
-#include "../Entity/Entity.h"
+#include "Control.h"
+#include "Entity.h"
 
 class SearchHireInfo;
 class ApplyHireInfo;

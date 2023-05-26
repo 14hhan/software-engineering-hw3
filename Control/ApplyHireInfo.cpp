@@ -4,7 +4,7 @@
 
 using namespace std;
 
-#include "./Control.h"
+#include "Control.h"
 
 ApplyHireInfoUI* ApplyHireInfo::getUI(ifstream& inputFile,
                                       ofstream& outputFile) {

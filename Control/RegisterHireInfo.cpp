@@ -4,7 +4,7 @@
 
 using namespace std;
 
-#include "Boundary/Boundary.h"
+#include "Boundary.h"
 #include "Control.h"
 
 User* companyUser;  // 현재 로그인중인 회사 회원의 정보를 전역으로 설정

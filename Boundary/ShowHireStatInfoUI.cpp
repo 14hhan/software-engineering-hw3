@@ -5,5 +5,7 @@ using namespace std;
 //기능: 채용통계정보를 받아서 출력한다.
 void ShowHireStatInfoUI::startInterface(vector<HireInfoSummary> companyUsersHireInfos) const
 {
-    // 데이터 출력
+    for(int i=0; i<companyUsersHireInfos.size(); i++) {
+		outputFile << companyUsersHireInfos[i].companyName << companyUsersHireInfos[i].applicantNum << endl;
+	}
 }

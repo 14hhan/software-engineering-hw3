@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "Boundary.h"
-#include "Control/Control.h"
+#include "Control.h"
 
 RegisterHireInfoUI::RegisterHireInfoUI(RegisterHireInfo* control) {
   this->control = control;

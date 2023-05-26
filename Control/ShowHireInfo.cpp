@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "./Control.h"
+#include "Control.h"
 
 using namespace std;
 

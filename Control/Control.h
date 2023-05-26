@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "../Boundary/Boundary.h"
-#include "../Entity/Entity.h"
+#include "Boundary.h"
+#include "Entity.h"
 
 struct HireListItem {
   std::string groupIndex;
