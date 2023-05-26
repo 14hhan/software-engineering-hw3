@@ -83,4 +83,10 @@ class ShowHireStatInfo {
   void sortByWorkType() const;
 };
 
+
+class ShowHireInfo {
+  public: 
+    std::string* sendHireInfoData();
+};
+
 #endif
