@@ -6,9 +6,10 @@ using namespace std;
 
 #include "./Control.h"
 
-SearchHireInfoUI* SearchHireInfo::getUI() {
+SearchHireInfoUI* SearchHireInfo::getUI(ifstream& inputFile,
+                                        ofstream& outputFile) {
   // 사용자에게 Boundary 객체를 넘겨준다
-  SearchHireInfoUI* ui = new SearchHireInfoUI(this);
+  SearchHireInfoUI* ui = new SearchHireInfoUI(this, inputFile, outputFile);
   return ui;
 }
 

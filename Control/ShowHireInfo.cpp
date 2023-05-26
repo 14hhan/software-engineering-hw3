@@ -7,7 +7,15 @@
 
 using namespace std;
 
-ShowHireInfo::ShowHireInfo() {}
+// showHireInfo 컨트롤 클래스의 생성자 함수
+ShowHireInfo::ShowHireInfo(ShowHireInfo* showHireInfo) {
+  // 로그인 상태에서 회사 회원 자신이 등록한 채용 정보 조회 가능
+  this->control = control;
+
+  if (loginState) {
+    ShowHireInfoUI* ShowHireInfoUI = new ShowHireInfoUI;
+  }
+};
 
 ShowHireInfoUI* ShowHireInfo::getUI() {
   ShowHireInfoUI* ui = new ShowHireInfoUI(this);

@@ -14,28 +14,28 @@ struct HireListItem {
 
 class RegisterUser {
  public:
-  void addUser(int userType, string id, string password, string name,
-               int number);
+  void addUser(int userType, std::string id, std::string password,
+               std::string name, int number);
 };
 
 class WithdrawUser {
  public:
-  void deleteUser(string id);
+  void deleteUser(std::string id);
 };
 
 class Login {
  public:
-  void login(string id, string password);
+  void login(std::string id, std::string password);
 };
 
 class Logout {
  public:
-  void logout(string id);
+  void logout(std::string id);
 };
 
 class SearchHireInfo {
  public:
-  SearchHireInfoUI* getUI();
+  SearchHireInfoUI* getUI(std::ifstream& inputFile, std::ofstream& outputFile);
   std::vector<std::string> sendSearchHireInfo(std::string input);
 
  private:
@@ -47,9 +47,9 @@ class SearchHireInfo {
 
 class ApplyHireInfo {
  public:
-  ApplyHireInfoUI* getUI();
+  ApplyHireInfoUI* getUI(std::ifstream& inputFile, std::ofstream& outputFile);
   std::vector<std::string> sendSearchHireInfo(std::string input);
-  bool sendCreateNewApplication(string userId, int chosenIndex);
+  bool sendCreateNewApplication(std::string userId, int chosenIndex);
 
  private:
   std::string InputWord;
@@ -61,32 +61,37 @@ class ApplyHireInfo {
 // 송양기
 class ShowApplianceInfo {
  public:
-  void showApplianceInfo(string) const;
+  void showApplianceInfo(std::string);
   bool compareByCompanyName(HireInfoSummary, HireInfoSummary);
 };
 
 class CancelApplianceInfo {
  public:
-  std::string deleteApplicationInfo(string, int) const;
+  std::string deleteApplicationInfo(std::string, int);
 };
 
 class ShowApplicationStatInfo {
  public:
-  void showApplicationStatInfo(string);
-  void sortByMonth() const;
-  void sortByWorkType() const;
+  void showApplicationStatInfo(std::string);
+  void sortByMonth();
+  void sortByWorkType();
 };
 
 class ShowHireStatInfo {
  public:
-  void showHireStatInfo(string) const;
-  void sortByWorkType() const;
+  void showHireStatInfo(std::string);
+  void sortByWorkType();
 };
 
-
 class ShowHireInfo {
-  public: 
-    std::string* sendHireInfoData();
+ public:
+  std::string* sendHireInfoData();
+};
+
+class RegisterHireInfo {
+ public:
+  void RegisterHireInfo::sendHireInfoData(std::string workType,
+                                          std::string dueDate, int quota);
 };
 
 #endif

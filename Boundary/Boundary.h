@@ -36,22 +36,22 @@ class ApplyHireInfoUI {
 class ShowApplianceInfoUI {
  public:
   // 인자 필요
-  void startInterface(vector<HireInfoSummary>);
+  void startInterface(vector<HireInfoSummary>, ofstream&);
 };
 
 class CancelApplianceInfoUI {
  public:
-  void startInterface(string, int) const;
+  void startInterface(string, int, ofstream&) const;
 };
 
 class ShowApplicationStatInfoUI {
  public:
-  void startInterface(void) const;
+  void startInterface(ofstream&) const;
 };
 
 class ShowHireStatInfoUI {
  public:
-  void startInterface(vector<HireInfoSummary>) const;
+  void startInterface(vector<HireInfoSummary>, ofstream&) const;
 };
 
 class RegisterUserUI {

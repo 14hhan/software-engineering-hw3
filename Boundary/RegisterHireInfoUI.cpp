@@ -6,8 +6,13 @@ using namespace std;
 #include "Boundary.h"
 #include "Control/Control.h"
 
+RegisterHireInfoUI::RegisterHireInfoUI(RegisterHireInfo* control) {
+  this->control = control;
+  startInterface();
+}
+
 // RegisterHireInfo UI를 보여주는 함수
-void RegisterHireInfoUI::StartInterface(ofstream& outputFile) {
+void RegisterHireInfoUI::startInterface(ofstream& outputFile) {
   outputFile << "3.1. 채용 정보 등록";
 };
 
