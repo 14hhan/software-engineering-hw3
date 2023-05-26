@@ -1,7 +1,6 @@
 #ifndef Boundary_h
 #define Boundary_h
 
-#include <string>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -14,23 +13,29 @@ class ApplyHireInfo;
 
 class SearchHireInfoUI {
  public:
-  SearchHireInfoUI(SearchHireInfo* control);
+  SearchHireInfoUI(SearchHireInfo* control, ifstream& inputFile,
+                   ofstream& outputFile);
   void startInterface();
-  void searchHireInfo(std::string input);
+  void searchHireInfo();
 
  protected:
   SearchHireInfo* control;
+  std::ifstream* inputFile;
+  std::ofstream* outputFile;
 };
 
 class ApplyHireInfoUI {
  public:
-  ApplyHireInfoUI(ApplyHireInfo* control);
+  ApplyHireInfoUI(ApplyHireInfo* control, ifstream& inputFile,
+                  ofstream& outputFile);
   void startInterface();
-  void searchHireInfo(std::string input);
-  void applyHireInfo(string userId, int chosenIndex);
+  void searchHireInfo();
+  void applyHireInfo(string userId);
 
  private:
   ApplyHireInfo* control;
+  std::ifstream* inputFile;
+  std::ofstream* outputFile;
 };
 
 class ShowApplianceInfoUI {
@@ -89,6 +94,7 @@ class RegisterHireInfoUI {
   RegisterHireInfo* control;
 };
 
+// 하기 미구현
 // RegisterHireInfo 객체를 생성하는 생성자 함수
 RegisterHireInfo::RegisterHireInfo(RegisterHireInfo* control) {
   // 로그인 중, 회사 회원 상태 일 때만 채용 정보를 등록 할 수 있음
