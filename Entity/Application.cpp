@@ -13,7 +13,7 @@ Application::Application(HireInfo* hireInfo, string userId) {
 
 Application::~Application() {
   // 소멸시 allApplication에서 자신을 삭제한다
-  appliedHireInfo->decreaseApplicantNum();
+  appliedHireInfo->decreaseApplicantNum();  // TODO
   allApplication.erase(
       remove(allApplication.begin(), allApplication.end(), this),
       allApplication.end());
