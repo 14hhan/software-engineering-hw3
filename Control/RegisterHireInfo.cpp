@@ -2,11 +2,12 @@
 
 #include <string>
 
+using namespace std;
+
 #include "Boundary/Boundary.h"
 #include "Control.h"
 
 User* companyUser;  // 현재 로그인중인 회사 회원의 정보를 전역으로 설정
-
 // 입력받은 채용 정보들을 전달하는 함수
 void RegisterHireInfo::sendHireInfoData(string workType, string dueDate,
                                         int quota) {
