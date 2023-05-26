@@ -6,7 +6,7 @@ using namespace std;
 
 void ShowApplianceInfo::showApplianceInfo(string userId) const
 {
-    vector<HireInfoSummary> ApplicationOfNormalUser = Application::getNormarUsersApplications(userId);
+    vector<HireInfoSummary> ApplicationOfNormalUser = Application::getNormalUsersApplications(userId);
 
     // sort by company name. 오름차순인지 검사 다시 해야함
     sort(ApplicationOfNormalUser.begin(), ApplicationOfNormalUser.end(), compareByCompanyName);

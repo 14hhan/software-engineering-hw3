@@ -18,26 +18,22 @@ class NormalUser : public User {
  private:
   std::string userName;
   int registrationNumber;
-  string id;
-  std::string password;
 
  public:
   NormalUser(std::string id, std::string password, std::string userName,
              int registrationNumber);
-  virtual std::string getUserInfo();
+  virtual std::string getUserInfo();  // Q: 이것도 virtual이 필요한가요?
 };
 
 class CompanyUser : public User {
  private:
   std::string companyName;
   int companyNumber;
-  string id;
-  std::string password;
 
  public:
   CompanyUser(std::string id, std::string password, std::string companyName,
               int companyNumber);
-  virtual std::string getUserInfo();
+  virtual std::string getUserInfo();  // Q: 이것도 virtual이 필요한가요?
 };
 
 struct HireInfoSummary {
@@ -48,43 +44,42 @@ struct HireInfoSummary {
 };
 
 class HireInfo {
+ public:
+  HireInfo(std::string companyName, std::string workType, int dueDate,
+           int businessNum, string userId);
+  static std::vector<HireInfo*> getAllHireInfo();
+  static std::vector<HireInfoSummary> getCompanyUsersHireInfos(string);
+  HireInfoSummary getHireInfo();
+  void increaseApplicantNum();
+  void decreaseApplicantNum();
+  int getBusinessNum();
+  std::string getCompanyName();
+  std::string getWorkType();
+  std::string getUserId();
+
  private:
+  static std::vector<HireInfo*> allHireInfo;
   std::string companyName;
   std::string workType;
   int businessNum;
   int applicantNum;
   int dueDate;
   string userId;
-  static std::vector<HireInfo*> allHireInfo;
-
- public:
-  HireInfo(std::string companyName, std::string workType, int dueDate,
-           int businessNum, string userId);
-  HireInfoSummary getHireInfo();
-  void increaseApplicantNum();
-  void decreaseApplicantNum();
-  static std::vector<HireInfo*> getAllHireInfo();
-  static std::vector<HireInfoSummary> getCompanyUsersHireInfos(string);
-  int getBusinessNum();
-  std::string getCompanyName();
-  std::string getWorkType();
-  std::string getUserId();
 };
 
 class Application {
+ public:
+  Application(HireInfo*, string);
+  ~Application();
+  static std::vector<HireInfoSummary> getNormalUsersApplications(string);
+  static std::string deleteApplication(string, int);
+  HireInfo* getAppliedHireInfo();
+  std::string getUserId();
+
  private:
   HireInfo* appliedHireInfo;
   static std::vector<Application*> allApplication;
-
   std::string userId;
-
- public:
-  Application(HireInfo*, string);
-  static std::string deleteApplication(string, int);
-  static std::vector<HireInfoSummary> getNormarUsersApplications(string);
-  ~Application();
-  HireInfo* getAppliedHireInfo();
-  std::string getUserId();
 };
 
 #endif

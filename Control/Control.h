@@ -35,7 +35,6 @@ class Logout {
 
 class SearchHireInfo {
  public:
-  SearchHireInfo();
   SearchHireInfoUI* getUI();
   std::vector<std::string> sendSearchHireInfo(std::string input);
 
@@ -48,10 +47,9 @@ class SearchHireInfo {
 
 class ApplyHireInfo {
  public:
-  ApplyHireInfo();
   ApplyHireInfoUI* getUI();
   std::vector<std::string> sendSearchHireInfo(std::string input);
-  bool sendCreateNewApplication(int registrationNumber, int chosenIndex);
+  bool sendCreateNewApplication(string userId, int chosenIndex);
 
  private:
   std::string InputWord;

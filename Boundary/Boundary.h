@@ -25,7 +25,7 @@ class ApplyHireInfoUI {
   ApplyHireInfoUI(ApplyHireInfo* control);
   void startInterface();
   void searchHireInfo(std::string input);
-  void applyHireInfo(int registrationNumber, int chosenIndex);
+  void applyHireInfo(string userId, int chosenIndex);
 
  private:
   ApplyHireInfo* control;
@@ -36,6 +36,7 @@ class ShowApplianceInfoUI {
   // 인자 필요
   void startInterface(vector<HireInfoSummary>);
 };
+
 class CancelApplianceInfoUI {
  public:
   void startInterface(string, int) const;

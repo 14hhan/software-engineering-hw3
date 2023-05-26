@@ -1,8 +1,10 @@
 using namespace std;
-#include<string.h>
+#include <string.h>
+
 #include "./Entity.h"
 
 Application::Application(HireInfo* hireInfo, string userId) {
+  // 지원한 채용정보의 포인터, 유저 ID를 저장한다
   hireInfo->increaseApplicantNum();
   this->appliedHireInfo = hireInfo;
   this->userId = userId;
@@ -10,17 +12,20 @@ Application::Application(HireInfo* hireInfo, string userId) {
 }
 
 Application::~Application() {
-  this -> appliedHireInfo -> decreaseApplicantNum();
-  allApplication.erase(remove(allApplication.begin(), allApplication.end(), this), allApplication.end());
+  // 소멸시 allApplication에서 자신을 삭제한다
+  appliedHireInfo->decreaseApplicantNum();  // TODO
+  allApplication.erase(
+      remove(allApplication.begin(), allApplication.end(), this),
+      allApplication.end());
 }
 
-vector<HireInfoSummary> Application::getNormarUsersApplications(string userId) { 
-  // allApplication 을 가공해서 가공한 vector 반환해야.
-
+vector<HireInfoSummary> Application::getNormalUsersApplications(string userId) {
+  // STATIC: 입력된 userId와 일치하는 userId를 가진 지원 정보 목록 반환
   vector<HireInfoSummary> ApplicationOfNormalUser;
-  for(int i=0; i<allApplication.size(); i++) {
+  for (int i = 0; i < allApplication.size(); i++) {
     if (allApplication[i]->getUserId() == userId) {
-      ApplicationOfNormalUser.push_back(allApplication[i]->getAppliedHireInfo()->getHireInfo());
+      ApplicationOfNormalUser.push_back(
+          allApplication[i]->getAppliedHireInfo()->getHireInfo());
     }
   }
 
@@ -28,9 +33,12 @@ vector<HireInfoSummary> Application::getNormarUsersApplications(string userId) {
 };
 
 string Application::deleteApplication(string userId, int businessNum) {
-  
-  for(int i=0; i<allApplication.size(); i++) {
-    if ((allApplication[i]->getUserId() == userId) && (allApplication[i]->getAppliedHireInfo()->getBusinessNum() ==businessNum )) {
+  // STATIC: 모든 지원 정보중 입력된 userId와 businessNum을 가진 정보를 삭제
+  // 삭제 후 삭제된 지원 정보의 정보를 반환
+  for (int i = 0; i < allApplication.size(); i++) {
+    if ((allApplication[i]->getUserId() == userId) &&
+        (allApplication[i]->getAppliedHireInfo()->getBusinessNum() ==
+         businessNum)) {
       // 백업 -> 저장 -> 리턴
       // 회사이름, 사업자번호, 업무
 
@@ -47,11 +55,6 @@ string Application::deleteApplication(string userId, int businessNum) {
   }
 }
 
-HireInfo* Application::getAppliedHireInfo() {
-  return appliedHireInfo;
-}
+HireInfo* Application::getAppliedHireInfo() { return appliedHireInfo; }
 
-string Application::getUserId() {
-  return userId;
-  
-}
+string Application::getUserId() { return userId; }
