@@ -47,7 +47,7 @@ class SearchHireInfo {
 
 class ApplyHireInfo {
  public:
-  ApplyHireInfoUI* getUI();
+  ApplyHireInfoUI* getUI(std::ifstream& inputFile, std::ofstream& outputFile);
   std::vector<std::string> sendSearchHireInfo(std::string input);
   bool sendCreateNewApplication(std::string userId, int chosenIndex);
 

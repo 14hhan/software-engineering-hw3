@@ -6,9 +6,10 @@ using namespace std;
 
 #include "./Control.h"
 
-ApplyHireInfoUI* ApplyHireInfo::getUI() {
+ApplyHireInfoUI* ApplyHireInfo::getUI(ifstream& inputFile,
+                                      ofstream& outputFile) {
   // 사용자에게 Boundary 객체를 넘겨준다
-  ApplyHireInfoUI* ui = new ApplyHireInfoUI(this);
+  ApplyHireInfoUI* ui = new ApplyHireInfoUI(this, inputFile, outputFile);
   return ui;
 }
 

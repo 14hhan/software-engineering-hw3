@@ -26,13 +26,16 @@ class SearchHireInfoUI {
 
 class ApplyHireInfoUI {
  public:
-  ApplyHireInfoUI(ApplyHireInfo* control);
+  ApplyHireInfoUI(ApplyHireInfo* control, std::ifstream& inputFile,
+                  std::ofstream& outputFile);
   void startInterface();
-  void searchHireInfo(std::string input);
-  void applyHireInfo(std::string userId, int chosenIndex);
+  void searchHireInfo();
+  void applyHireInfo();
 
  private:
   ApplyHireInfo* control;
+  std::ifstream* inputFile;
+  std::ofstream* outputFile;
 };
 
 class ShowApplianceInfoUI {
