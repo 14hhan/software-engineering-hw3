@@ -1,7 +1,7 @@
 using namespace std;
 
 #include "Boundary.h"
-#include "Control/Control.h"
+#include "Control.h"
 
 void RegisterUserUI::startInterface(ofstream& outputFile) {
   outputFile << "1.1. 회원가입\n";

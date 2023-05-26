@@ -8,7 +8,7 @@ void ShowApplianceInfoUI::startInterface(vector<HireInfoSummary> ApplicationOfNo
 {
 	// { [회사이름] [사업자번호] [업무] [인원 수] [신청마감일] }
 
-	for(int i=0; i<ApplicationOfNormalUser) {
+	for(int i=0; i<ApplicationOfNormalUser.size(); i++) {
 		outputFile << ApplicationOfNormalUser[i].companyName << ApplicationOfNormalUser[i].workType << ApplicationOfNormalUser[i].applicantNum << ApplicationOfNormalUser[i].dueDate << endl;
 	}
 
