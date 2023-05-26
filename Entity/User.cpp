@@ -2,13 +2,12 @@ using namespace std;
 
 #include "Entity.h"
 
-User::User(string id, int password) {
-  // id와 비밀번호를 입력받아 저장한다
+User::User(string id, string password) {
   this->id = id;
   this->password = password;
 }
 
-NormalUser::NormalUser(string id, int password, string userName,
+NormalUser::NormalUser(string id, string password, string userName,
                        int registrationNumber)
     : User::User(id, password) {
   // User의 상속자로 사용자 이름과 고유식별번호를 저장한다
@@ -16,7 +15,7 @@ NormalUser::NormalUser(string id, int password, string userName,
   this->registrationNumber = registrationNumber;
 }
 
-CompanyUser::CompanyUser(string id, int password, string companyName,
+CompanyUser::CompanyUser(string id, string password, string companyName,
                          int companyNumber)
     : User::User(id, password) {
   // User의 상속자로 회사명과 사업자 번호를 저장한다

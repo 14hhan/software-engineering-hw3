@@ -7,10 +7,10 @@
 class User {
  private:
   std::string id;
-  int password;
+  std::string password;
 
  public:
-  User(std::string id, int password);
+  User(std::string id, std::string password);
   virtual std::string getUserInfo();
 };
 
@@ -20,7 +20,7 @@ class NormalUser : public User {
   int registrationNumber;
 
  public:
-  NormalUser(std::string id, int password, std::string userName,
+  NormalUser(std::string id, std::string password, std::string userName,
              int registrationNumber);
   virtual std::string getUserInfo();  // Q: 이것도 virtual이 필요한가요?
 };
@@ -31,7 +31,7 @@ class CompanyUser : public User {
   int companyNumber;
 
  public:
-  CompanyUser(std::string id, int password, std::string companyName,
+  CompanyUser(std::string id, std::string password, std::string companyName,
               int companyNumber);
   virtual std::string getUserInfo();  // Q: 이것도 virtual이 필요한가요?
 };

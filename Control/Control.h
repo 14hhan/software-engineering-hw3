@@ -12,6 +12,27 @@ struct HireListItem {
   HireInfoSummary summary;
 };
 
+class RegisterUser {
+ public:
+  void addUser(int userType, string id, string password, string name,
+               int number);
+};
+
+class WithdrawUser {
+ public:
+  void deleteUser(string id);
+};
+
+class Login {
+ public:
+  void login(string id, string password);
+};
+
+class Logout {
+ public:
+  void logout(string id);
+};
+
 class SearchHireInfo {
  public:
   SearchHireInfoUI* getUI();
